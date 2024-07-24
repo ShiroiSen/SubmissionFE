@@ -1,0 +1,281 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(248, 250, 252);
+}
+
+body, input, button {
+    font-family: 'Open Sans', sans-serif;
+}
+
+input, button {
+    font-size: 12px;
+}
+
+.head_bar {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    max-width: 1000px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 12px;
+}
+
+.input_section {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    box-shadow: 0 4px 8px rgba(15, 23, 42, 0.1);
+    border-radius: 10px;
+    background-color: rgb(248, 250, 252);
+}
+
+.input_section > h2 {
+    text-align: center;
+    color: #5F30E2;
+}
+
+.input_section > form > .input {
+    margin: 8px 0;
+}
+
+.input_section > form > button {
+    background-color: #5F30E2;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input_section > form > button:hover {
+    background-color: #4b20b3;
+}
+
+.input_section > form > .input > input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+
+.input_section > form > .input > input:focus {
+    border-color: #5F30E2;
+    box-shadow: 0 0 5px rgba(95, 48, 226, 0.5);
+}
+
+.input_section > form > .input > label {
+    color: #5F30E2;
+    font-weight: bold;
+}
+
+.input_section > form > .input_inline {
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+}
+
+.input_section > form > .input_inline > label {
+    color: #5F30E2;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.input_section > form > .input_inline > input {
+    transform: scale(1.2);
+}
+
+.search_section {
+    margin: 12px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    box-shadow: 0 4px 8px rgba(15, 23, 42, 0.1);
+    border-radius: 10px;
+    background-color: rgb(248, 250, 252);
+}
+
+.search_section > h2 {
+    color: #5F30E2;
+}
+
+.search_section > form {
+    padding: 12px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr 0.5fr;
+    grid-gap: 10px;
+}
+
+.search_section > form > label {
+    display: flex;
+    align-items: center;
+}
+
+.search_section > form > input {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.search_section > form > button {
+    background-color: #5F30E2;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dualCard {
+ display: flex;
+ flex-direction: row;
+ gap: 12px;
+ background-color: rgb(248, 250, 252);
+}
+
+.book_shelf {
+    flex: 1;
+    margin: 12px 0 0 0;
+    box-shadow: 0 4px 8px rgba(15, 23, 42, 0.1);
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.book_shelf > h2 {
+    color: #5F30E2;
+}
+
+.book_shelf > .book_list {
+    padding: 12px;
+}
+
+.book_shelf > .book_list > .book_item {
+    padding: 8px 12px 12px 12px;
+    box-shadow: 0 4px 8px rgba(15, 23, 42, 0.1);
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.book_shelf > .book_list > .book_item > h3, p {
+    margin: 8px 0;
+}
+
+.toast {
+    visibility: hidden;
+    min-width: 200px;
+    background-color: #5F30E2;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 12px;
+    position: fixed;
+    z-index: 1;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+}
+  
+.toast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+  
+@-webkit-keyframes fadein {
+    from {right: 0; opacity: 0;} 
+    to {right: 30px; opacity: 1;}
+}
+  
+@keyframes fadein {
+    from {right: 0; opacity: 0;}
+    to {right: 30px; opacity: 1;}
+}
+  
+@-webkit-keyframes fadeout {
+    from {right: 30px; opacity: 1;} 
+    to {right: 0; opacity: 0;}
+}
+  
+@keyframes fadeout {
+    from {right: 30px; opacity: 1;}
+    to {right: 0; opacity: 0;}
+}
+
+.trash-button {
+    width: 35px;
+    height: 35px;
+    border-radius: 15px;
+    background: url('../assets/trash.svg');
+    background-size: contain;
+    margin-left: 12px;
+    cursor: pointer;
+    border: none;
+    background-color: red;
+}
+
+.trash-button:hover {
+    border-radius: 30px;
+}
+
+.done-button {
+    width: 35px;
+    height: 35px;
+    border-radius: 15px;
+    background: url('../assets/done.svg');
+    background-size: contain;
+    margin-left: 12px;
+    cursor: pointer;
+    border: none;
+    background-color: lightgreen;
+}
+
+.done-button:hover {
+    border-radius: 30px;
+}
+
+.edit-button {
+    width: 35px;
+    height: 35px;
+    border-radius: 15px;
+    background: url('../assets/edit.svg');
+    background-size: contain;
+    margin-left: 12px;
+    cursor: pointer;
+    border: none;
+    background-color: yellow;
+}
+
+.edit-button:hover {
+    border-radius: 30px;
+}
+
+.undo-button {
+    width: 35px;
+    height: 35px;
+    border-radius: 15px;
+    background: url('../assets/undo.svg');
+    background-size: contain;
+    margin-left: 12px;
+    cursor: pointer;
+    border: none;
+    background-color: lightgreen;
+}
+
+.undo-button:hover {
+    border-radius: 30px;
+}
