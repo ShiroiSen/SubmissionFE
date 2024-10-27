@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded',function(){
     inputForm.addEventListener('submit',function(event){
         event.preventDefault();
         addBook();
+        inputForm.reset(); 
     });
     if (isStorageExist()) {
         loadDataFromStorage();
@@ -168,11 +169,13 @@ function editBook(bookId){
     bookAuthor.value = bookTarget.author;
     bookYear.value = bookTarget.year;
 
-    if(bookTarget.isComplete){
-        bookIsComplete.value = true;
-    }else {
-        bookIsComplete.value = false;
-    }
+    // if(bookTarget.isComplete){
+    //     bookIsComplete.value = true;
+    // }else {
+    //     bookIsComplete.value = false;
+    // }
+
+    bookIsComplete.value = bookTarget.isComplete;
 
     books.splice(bookIndex,1);
     document.dispatchEvent(new Event(RENDER_EVENT));
@@ -253,7 +256,7 @@ function addBooktoCompleted (bookId) {
   }
 
  document.addEventListener(SAVED_EVENT, function() {
-  showToast('Data telah diperbarui');
+    showToast('Data telah diperbarui');
 });
 
  function loadDataFromStorage(){
